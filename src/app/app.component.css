@@ -1,0 +1,11 @@
+:host {
+  --content-padding: 10px;
+}
+
+header {
+  padding: var(--content-padding);
+}
+
+.content {
+  padding: var(--content-padding);
+}
