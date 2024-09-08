@@ -34,4 +34,13 @@ export class TodoService {
   getAllTodos(): Todo[] {
     return this.todos;
   }
+
+  addItem(todo: string): void {
+    const todoItem: Todo = {
+      id: crypto.randomUUID(),
+      todo,
+      completed: false,
+    };
+    this.todos.push(todoItem);
+  }
 }
