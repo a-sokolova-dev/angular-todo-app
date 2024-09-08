@@ -1,5 +1,5 @@
 <ul>
   @for (todo of todos; track todo.id) {
-  <app-todo-item [todo]="todo" />
+  <app-todo-item [todo]="todo" (remove)="removeTodo($event)" />
   }
 </ul>

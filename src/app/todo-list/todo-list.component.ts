@@ -13,6 +13,10 @@ export class TodoListComponent {
   todos: Todo[] = [];
   todoService: TodoService = inject(TodoService);
 
+  removeTodo(id: string): void {
+    this.todoService.removeItemById(id);
+  }
+
   constructor() {
     this.todos = this.todoService.getAllTodos();
   }

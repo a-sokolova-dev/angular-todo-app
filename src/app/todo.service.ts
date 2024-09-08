@@ -43,4 +43,9 @@ export class TodoService {
     };
     this.todos.push(todoItem);
   }
+
+  removeItemById(id: string): void {
+    const index = this.todos.map((x) => x.id).indexOf(id);
+    this.todos.splice(index, 1);
+  }
 }
