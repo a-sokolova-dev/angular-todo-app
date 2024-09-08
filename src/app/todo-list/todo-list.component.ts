@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { Todo } from '../todo';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,9 +10,10 @@ import { Todo } from '../todo';
   templateUrl: './todo-list.component.html',
 })
 export class TodoListComponent {
-  mockTodo: Todo = {
-    id: 0,
-    todo: 'test todo',
-    completed: true,
-  };
+  todos: Todo[] = [];
+  todoService: TodoService = inject(TodoService);
+
+  constructor() {
+    this.todos = this.todoService.getAllTodos();
+  }
 }
