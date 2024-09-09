@@ -45,8 +45,8 @@ export class TodoService {
   }
 
   removeItemById(id: string): void {
-    const index = this.todos.map((x) => x.id).indexOf(id);
-    this.todos.splice(index, 1);
+    const todoToRemoveIdx = this.todos.findIndex((t) => t.id === id);
+    this.todos.splice(todoToRemoveIdx, 1);
   }
 
   updateItemStatusById(id: string): void {
