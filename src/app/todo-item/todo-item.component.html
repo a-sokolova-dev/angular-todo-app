@@ -1,10 +1,11 @@
 <li>
   <input
     class="toggle"
+    [id]="todo.id"
     type="checkbox"
     [checked]="todo.completed"
     (change)="toggleTodo()"
   />
-  <label>{{ todo.todo }}</label>
+  <label [for]="todo.id">{{ todo.todo }}</label>
   <button (click)="removeTodo()">remove</button>
 </li>
