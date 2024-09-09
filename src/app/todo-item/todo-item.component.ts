@@ -12,8 +12,13 @@ export class TodoItemComponent {
   @Input({ required: true }) todo!: Todo;
 
   @Output() remove = new EventEmitter<string>();
+  @Output() toggle = new EventEmitter<string>();
 
   removeTodo(): void {
     this.remove.emit(this.todo.id);
+  }
+
+  toggleTodo(): void {
+    this.toggle.emit(this.todo.id);
   }
 }

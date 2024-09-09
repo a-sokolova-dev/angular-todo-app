@@ -48,4 +48,10 @@ export class TodoService {
     const index = this.todos.map((x) => x.id).indexOf(id);
     this.todos.splice(index, 1);
   }
+
+  updateItemStatusById(id: string): void {
+    const todoToUpdate = this.todos.find((t) => t.id === id);
+    if (!todoToUpdate) return;
+    todoToUpdate.completed = !todoToUpdate.completed;
+  }
 }

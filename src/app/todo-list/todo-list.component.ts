@@ -17,6 +17,10 @@ export class TodoListComponent {
     this.todoService.removeItemById(id);
   }
 
+  toggleTodo(id: string): void {
+    this.todoService.updateItemStatusById(id);
+  }
+
   constructor() {
     this.todos = this.todoService.getAllTodos();
   }
