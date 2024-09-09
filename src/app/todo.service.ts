@@ -54,4 +54,9 @@ export class TodoService {
     if (!todoToUpdate) return;
     todoToUpdate.completed = !todoToUpdate.completed;
   }
+
+  updateItem(updated: Todo): void {
+    const todoToUpdateIdx = this.todos.findIndex((t) => t.id === updated.id);
+    this.todos[todoToUpdateIdx] = { ...updated };
+  }
 }

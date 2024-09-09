@@ -21,6 +21,10 @@ export class TodoListComponent {
     this.todoService.updateItemStatusById(id);
   }
 
+  updateTodo(updatedTodo: Todo): void {
+    this.todoService.updateItem(updatedTodo);
+  }
+
   constructor() {
     this.todos = this.todoService.getAllTodos();
   }
